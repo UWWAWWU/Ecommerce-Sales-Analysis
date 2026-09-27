@@ -2,7 +2,7 @@
 
 Reproducible Python and SQL analysis of the [UCI Online Retail dataset](https://archive.ics.uci.edu/dataset/352/online+retail), with a shareable interactive dashboard. The dashboard uses preaggregated data: individual invoices and customer IDs are not published.
 
-**[Open the live dashboard](https://wawu-online-retail-analysis.wawutri57.chatgpt.site)** · [Portfolio](https://wawutriambodo.my.id)
+**[Open the live dashboard](https://dashboard.wawutriambodo.my.id)** · [Portfolio](https://wawutriambodo.my.id)
 
 ## Results
 
@@ -20,7 +20,7 @@ The cleaning step removes 5,268 exact duplicates. It retains sales with a missin
 
 ## Dashboard
 
-The [live dashboard](https://wawu-online-retail-analysis.wawutri57.chatgpt.site) provides country and date filters, gross sales, valid orders, average order value, cancellation rate, monthly revenue, top markets, and top merchandise stock codes. The source in `docs/` is a static HTML/CSS/JavaScript dashboard that also opens locally from `docs/index.html`.
+The [live dashboard](https://dashboard.wawutriambodo.my.id) provides country and date filters, gross sales, valid orders, average order value, cancellation rate, monthly revenue, top markets, and top merchandise stock codes. The source in `docs/` is a static HTML/CSS/JavaScript dashboard that also opens locally from `docs/index.html`.
 
 The full-period known customer count and peak month are reproducible in `audit.json`; the dashboard does not offer a customer count under filters because its public aggregates contain no customer identifiers. Gross sales do **not** mean net revenue after returns. Country and month filters recalculate the displayed figures.
 
