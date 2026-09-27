@@ -1,0 +1,8 @@
+data/raw/*
+!data/raw/.gitkeep
+data/processed/
+data/*.sqlite
+__pycache__/
+.venv/
+.DS_Store
+
