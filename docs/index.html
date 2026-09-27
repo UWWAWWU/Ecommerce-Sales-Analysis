@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#091826">
+  <meta name="description" content="Interactive analysis of the UCI Online Retail dataset: revenue, orders, countries, and products from December 2010 to December 2011.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23091826'/%3E%3Cpath d='M12 42L26 28l10 7 17-19' fill='none' stroke='%23bbf475' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <title>E-Commerce Sales Analyst | Wawu Tri Ambodo</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar"><div class="brand"><span class="brandmark">↗</span><span>RETAIL<span class="brand-light">/ANALYTICS</span></span></div><span class="source-pill"><span class="source-dot"></span> UCI Online Retail · 2010–2011</span></header>
+  <main class="shell">
+    <div class="heading"><div><div class="eyebrow">E-COMMERCE SALES / PERFORMANCE DASHBOARD</div><h1>Online retail, <em>in focus.</em></h1><p>Explore sales, orders and product demand across 38 markets.</p></div><div class="author">Analysis by <strong>Wawu Tri Ambodo</strong><br><span>Python · SQL · interactive dashboard</span></div></div>
+    <section class="filterbar" aria-label="Dashboard filters"><div class="filter-title">Explore by</div><label>Market<select id="country" aria-label="Select market"><option value="all">All markets</option></select></label><label>From<select id="from" aria-label="Start month"></select></label><label>To<select id="to" aria-label="End month"></select></label><button id="reset" type="button">Reset filters ↗</button></section>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <section class="kpis" aria-label="Key performance indicators">
+      <article class="kpi accent"><span>GROSS SALES</span><strong id="revenue">—</strong><small>Positive sales · GBP</small></article>
+      <article class="kpi"><span>VALID ORDERS</span><strong id="orders">—</strong><small>Distinct sales invoices</small></article>
+      <article class="kpi"><span>AVERAGE ORDER VALUE</span><strong id="aov">—</strong><small>Gross sales ÷ orders</small></article>
+      <article class="kpi"><span>CANCELLATION RATE</span><strong id="cancel-rate">—</strong><small><span id="cancel-count">—</span> cancelled invoices</small></article>
+    </section>
+    <section class="charts">
+      <article class="panel trend"><div class="panel-head"><div><span class="eyebrow">01 / MOMENTUM</span><h2>Monthly sales</h2></div><span class="legend"><i></i> Revenue (£)</span></div><div id="trend" class="chart" role="img" aria-label="Monthly revenue chart"></div><p class="note">December 2010 and December 2011 are partial months. Compare monthly values with care.</p></article>
+      <article class="panel markets"><div class="panel-head"><div><span class="eyebrow">02 / GEOGRAPHY</span><h2>Top markets</h2></div><span class="panel-meta">By gross sales</span></div><div id="markets" class="rank-list"></div></article>
+      <article class="panel products"><div class="panel-head"><div><span class="eyebrow">03 / CATALOG</span><h2>Top stock codes</h2></div><span class="panel-meta">By gross sales</span></div><div id="products" class="rank-list"></div></article>
+      <article class="panel story"><span class="eyebrow">READING THE DATA</span><h2>What the numbers include</h2><div class="story-stat"><strong id="share">—</strong><span id="share-label">UK share of selected gross sales</span></div><p>Sales use positive quantities and prices. Revenue excludes cancellations and invalid lines. Cancellation rate counts distinct cancelled invoices ÷ (valid + cancelled invoices). Gross sales are not net revenue after returns.</p><div class="rule"></div><p><strong>Source:</strong> UCI Online Retail · 1 Dec 2010–9 Dec 2011. Invoice and customer identifiers are not published here.</p></article>
+    </section>
+    <footer><span>ONLINE RETAIL / SALES ANALYSIS</span><a href="https://archive.ics.uci.edu/dataset/352/online+retail" target="_blank" rel="noopener noreferrer">Source dataset ↗</a></footer>
+  </main>
+</body>
+</html>
