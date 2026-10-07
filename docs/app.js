@@ -70,9 +70,12 @@
     data.products.forEach(r=>{if(visible(r))productTotals.set(r.code,(productTotals.get(r.code)||0)+r.revenue);});
     const top=Array.from(productTotals,([code,revenue])=>({label:`${data.productNames[code]||code} · ${code}`,revenue})).sort((a,b)=>b.revenue-a.revenue);
     rank(byId('products'),top,'revenue');
-    const uk=markets.get('United Kingdom')||0;
-    byId('share').textContent=total.revenue?`${(100*uk/total.revenue).toFixed(1)}%`:'—';
-    byId('share-label').textContent='UK share of selected gross sales';
+    const allMarketRevenue=data.geography.filter(inRange).reduce((sum,row)=>sum+row.revenue,0);
+    const shareRevenue=country.value==='all' ? (markets.get('United Kingdom')||0) : total.revenue;
+    byId('share').textContent=allMarketRevenue?`${(100*shareRevenue/allMarketRevenue).toFixed(1)}%`:'—';
+    byId('share-label').textContent=country.value==='all'
+      ? 'UK share of selected gross sales'
+      : `${country.value} share of all-market gross sales in the selected period`;
   }
   [country,from,to].forEach(el=>el.addEventListener('change',render));
   byId('reset').addEventListener('click',()=>{country.value='all';from.value=data.months[0];to.value=data.months.at(-1);render();});
