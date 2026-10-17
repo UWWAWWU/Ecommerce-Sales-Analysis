@@ -1,0 +1,18 @@
+{
+  "source_rows": 541909,
+  "duplicates_removed": 5268,
+  "valid_sales_lines": 524878,
+  "cancelled_invoice_lines": 9251,
+  "excluded_other_lines": 2512,
+  "missing_customer_id_in_sales": 132186,
+  "gross_sales_gbp": 10642110.8,
+  "valid_orders": 19960,
+  "cancelled_orders": 3836,
+  "cancellation_rate_pct": 16.12,
+  "average_order_value_gbp": 533.17,
+  "known_customers": 4338,
+  "peak_month": "2011-11",
+  "peak_month_sales_gbp": 1503866.78,
+  "date_start": "2010-12-01",
+  "date_end": "2011-12-09"
+}
